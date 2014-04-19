@@ -1,0 +1,39 @@
+<jcrypt:MainWindow title="JCrypt" icon="@img/locked.png" maximized="true" 
+    xmlns:bxml="http://pivot.apache.org/bxml"
+    xmlns:jcrypt="fr.dwarf.jcrypt.controllers"
+    xmlns:content="org.apache.pivot.wtk.content"
+    xmlns="org.apache.pivot.wtk">
+    <bxml:define>
+    	<bxml:include bxml:id="dialog" src="PromptWindow.bxml"/>
+    	<ButtonGroup bxml:id="groupe"/>
+    </bxml:define>
+    <FillPane>
+	    <BoxPane orientation="vertical" styles="{fill:true,padding:3}">
+	    	<Border title="Destination">
+	    		<BoxPane orientation="horizontal" styles="{padding:2}">
+		    		<TextInput bxml:id="outputDirectory" textSize="41" editable="false"/>
+		    		<PushButton bxml:id="pushButton" buttonData="..."/>
+		    	</BoxPane>
+	    	</Border>
+	    	<Border title="Fichiers" styles="{padding:2}">
+	    		<TablePane bxml:id="dropTarget">
+	    		 	<columns>
+	    		 		<TablePane.Column width="1*"/>
+	    		 	</columns>
+	    			<TablePane.Row height="375">
+	    				<Label text="Deposer vos fichiers"/>
+	    			</TablePane.Row>
+	    		</TablePane>
+	    	</Border>
+	    	<BoxPane orientation="horizontal">
+		    	<PushButton bxml:id="buttonCypher" toggleButton="true" buttonGroup="$groupe" selected="true">
+		            <content:ButtonData icon="@img/locked.png"/>
+		        </PushButton>
+		        <PushButton bxml:id="buttonDecypher" toggleButton="true" buttonGroup="$groupe">
+		            <content:ButtonData icon="@img/unlocked.png"/>
+		        </PushButton>
+		        <ActivityIndicator bxml:id="activityIndicator" preferredWidth="24" preferredHeight="24" visible="true"/>
+	    	</BoxPane>
+	    </BoxPane>
+    </FillPane>
+</jcrypt:MainWindow>

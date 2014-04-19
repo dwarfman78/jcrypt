@@ -1,0 +1,46 @@
+<jcrypt:HelpWindow xmlns:bxml="http://pivot.apache.org/bxml"
+    xmlns:jcrypt="fr.dwarf.jcrypt.controllers"
+    xmlns:content="org.apache.pivot.wtk.content"
+    xmlns="org.apache.pivot.wtk"
+    maximized="true">
+    <FillPane>
+    	<BoxPane orientation="vertical">
+    		<Separator heading="Aide" />
+    		<BoxPane orientation="vertical">
+    			<TextArea text="@aide.txt" editable="false" enabled="false" width="400"/>
+    			<BoxPane orientation="horizontal">
+    					<ImageView image="@img/locked.png"/>
+    					<Label text="Engage l'opération de cryptage."/>
+    			</BoxPane>
+    			<BoxPane orientation="horizontal">
+    					<ImageView image="@img/unlocked.png"/>
+    					<Label text="Engage l'opération de décryptage."/>
+    			</BoxPane>
+    			<BoxPane orientation="horizontal">
+    					<ImageView image="@img/scissors.png"/>
+    					<Label text="Supprime les fichiers originaux déposés pour cryptage."/>
+    			</BoxPane>
+    			<BoxPane orientation="horizontal">
+    					<ImageView image="@img/file-zip.png"/>
+    					<Label text="Compresse les fichiers cryptés finaux."/>
+    			</BoxPane>
+    			<BoxPane orientation="horizontal">
+    					<ImageView image="@img/folder-open.png"/>
+    					<Label text="Définit le répertoire de destination égal au répertoire source."/>
+    			</BoxPane>
+    		</BoxPane>
+    		<Separator heading="Informations"/>
+    		<TextArea text="@infos.txt" editable="false" enabled="false"/>
+    		<TablePane>
+		        <columns>
+		       		<TablePane.Column width="327"/>
+           			<TablePane.Column width="-1"/>
+        		</columns>
+        		<TablePane.Row>
+        			<TablePane.Filler/>
+        			<PushButton bxml:id="close" buttonData="Fermer"/>
+        		</TablePane.Row>
+        	</TablePane>
+    	</BoxPane>
+	</FillPane>
+</jcrypt:HelpWindow>

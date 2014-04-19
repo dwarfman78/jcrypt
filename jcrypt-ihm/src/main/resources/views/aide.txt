@@ -1,0 +1,5 @@
+JCrypt est une application permettant de crypter/décrypter 
+des fichiers et dossiers par glisser-déposer via une clé de 
+cryptage basée sur un mot de passe. 
+
+Options :

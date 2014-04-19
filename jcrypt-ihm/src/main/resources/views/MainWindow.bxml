@@ -1,0 +1,62 @@
+<jcrypt:MainWindow title="JCrypt" icon="@img/locked.png" maximized="true" 
+    xmlns:bxml="http://pivot.apache.org/bxml"
+    xmlns:jcrypt="fr.dwarf.jcrypt.controllers"
+    xmlns:content="org.apache.pivot.wtk.content"
+    xmlns="org.apache.pivot.wtk">
+    <bxml:define>
+    	<bxml:include bxml:id="dialog" src="PromptWindow.bxml"/>
+    	<bxml:include bxml:id="help" src="HelpWindow.bxml"/>
+    	<bxml:include bxml:id="path" src="PathWindow.bxml"/>
+    	<ButtonGroup bxml:id="groupe"/>
+    </bxml:define>
+    <FillPane>
+	    <BoxPane orientation="vertical" styles="{fill:true,padding:3}">
+	    	<Border title="Fichiers" styles="{padding:2}">
+	    		<TablePane bxml:id="dropTarget" tooltipText="Glisser-déposer ici vos fichiers à crypter/décrypter">
+	    		 	<columns>
+	    		 		<TablePane.Column width="1*"/>
+	    		 	</columns>
+	    			<TablePane.Row height="320">
+	    				<BoxPane orientation="vertical" styles="{verticalAlignment:'center',horizontalAlignment:'center'}">
+	    					<ImageView image="@img/downarrow.png"/>
+	    					<Label text="Déposer vos fichiers ici"/>
+	    				</BoxPane>
+	    			</TablePane.Row>
+	    		</TablePane>
+	    	</Border>
+		        <TablePane>
+		        	<columns>
+           				<TablePane.Column width="140"/>
+           				<TablePane.Column width="224"/>
+           				<TablePane.Column width="-1"/>
+        			</columns>
+        			<TablePane.Row height="-1">
+        				<BoxPane orientation="horizontal">
+					    	<PushButton bxml:id="buttonCypher" toggleButton="true" buttonGroup="$groupe" selected="true" tooltipText="Crypter"  styles="{toolbar:false}">
+					            <content:ButtonData icon="@img/locked.png"/>
+					        </PushButton>
+					        <PushButton bxml:id="buttonDecypher" toggleButton="true" buttonGroup="$groupe" tooltipText="Décrypter" styles="{toolbar:true}">
+					            <content:ButtonData icon="@img/unlocked.png"/>
+					        </PushButton>
+					        <PushButton bxml:id="buttonOneFolder" toggleButton="true" tooltipText="Répertoires source et destination identiques" styles="{toolbar:false}">
+					        	<content:ButtonData icon="@img/folder-open.png"/>
+					        </PushButton>
+					        <PushButton bxml:id="buttonZip" toggleButton="true" tooltipText="Compresser les fichiers cryptés" styles="{toolbar:true}">
+			        			<content:ButtonData icon="@img/file-zip.png"/>
+			        		</PushButton>
+					        <PushButton bxml:id="buttonCut" toggleButton="true" tooltipText="Supprimer les fichiers originaux non cryptés" styles="{toolbar:true}">
+			        			<content:ButtonData icon="@img/scissors.png"/>
+			        		</PushButton>
+		       			</BoxPane>
+        				<BoxPane bxml:id="activitiesPane" orientation="horizontal">
+		        		</BoxPane>
+		        		<BoxPane bxml:id="helpPane" orientation="horizontal">
+		        			<PushButton bxml:id="buttonHelp" tooltipText="Aide">
+		        				<content:ButtonData icon="@img/info.png"/>
+		        			</PushButton>
+		        		</BoxPane>
+        			</TablePane.Row>
+        		</TablePane>
+	    </BoxPane>
+    </FillPane>
+</jcrypt:MainWindow>

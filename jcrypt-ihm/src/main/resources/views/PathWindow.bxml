@@ -1,0 +1,11 @@
+<jcrypt:PathWindow xmlns:bxml="http://pivot.apache.org/bxml"
+    xmlns:jcrypt="fr.dwarf.jcrypt.controllers"
+    xmlns:content="org.apache.pivot.wtk.content"
+    xmlns="org.apache.pivot.wtk">
+    	<Border title="Destination">
+	    	<BoxPane orientation="horizontal" styles="{padding:2}">
+		    	<TextInput bxml:id="outputDirectory" textSize="10" editable="false"/>
+		    	<PushButton bxml:id="pushButton" buttonData="..."/>
+		    </BoxPane>
+	    </Border>
+</jcrypt:PathWindow>

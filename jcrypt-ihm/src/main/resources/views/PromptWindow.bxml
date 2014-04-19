@@ -1,0 +1,10 @@
+<jcrypt:PromptWindow xmlns:bxml="http://pivot.apache.org/bxml"
+    xmlns:jcrypt="fr.dwarf.jcrypt.controllers"
+    xmlns:content="org.apache.pivot.wtk.content"
+    xmlns="org.apache.pivot.wtk">
+    <FillPane>
+		<Border title="Saisissez la clé de cryptage">
+			<TextInput bxml:id="key" password="true" maximumLength="100"/>
+		</Border>
+	</FillPane>
+</jcrypt:PromptWindow>
