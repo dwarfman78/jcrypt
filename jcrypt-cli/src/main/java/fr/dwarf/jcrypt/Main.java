@@ -1,23 +1,27 @@
 package fr.dwarf.jcrypt;
 
-import java.io.IOException;
-
 import org.apache.commons.cli.ParseException;
 
-public class Main {
-    public static void main(String[] args) {
+import java.io.IOException;
 
-	CliHandler handler = new CliHandler();
+public class Main
+{
+    public static void main(String[] args)
+    {
 
-	handler.init();
+        CliHandler handler = new CliHandler();
 
-	try {
-	    handler.execute(args);
-	} catch (ParseException | IOException e) {
-	    System.err.println("Parsing failed.  Reason: " + e.getMessage() + " " + e.toString());
+        handler.init();
 
-	    // e.printStackTrace();
-	}
+        try
+        {
+            handler.execute(args);
+        } catch (ParseException | IOException e)
+        {
+            System.err.println("Parsing failed.  Reason: " + e.getMessage() + " " + e.toString());
+
+            // e.printStackTrace();
+        }
 
     }
 }

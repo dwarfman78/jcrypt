@@ -1,5 +1,10 @@
 package fr.dwarf.jcrypt.tasks;
 
+import fr.dwarf.jcrypt.helpers.JCryptFileVisitor;
+import fr.dwarf.jcrypt.models.MainWindowModel;
+import org.apache.pivot.util.concurrent.Task;
+import org.apache.pivot.util.concurrent.TaskExecutionException;
+
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.FileVisitor;
@@ -10,19 +15,13 @@ import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 
-import org.apache.pivot.util.concurrent.Task;
-import org.apache.pivot.util.concurrent.TaskExecutionException;
-
-import fr.dwarf.jcrypt.helpers.JCryptFileVisitor;
-import fr.dwarf.jcrypt.models.MainWindowModel;
-
 /**
  * Task pivot pour lancement asynchrone de la tâche de cryptographie.
- * 
+ *
  * @author flecorre
- * 
  */
-public class CryptoTask extends Task<Object> {
+public class CryptoTask extends Task<Object>
+{
 
     /**
      * Modèle contenant les informations entre les couches.
@@ -30,16 +29,14 @@ public class CryptoTask extends Task<Object> {
     private MainWindowModel model = null;
 
     /**
-     * Ctor d'init.
-     * 
-     * @param pool
-     *            pool de thread.
-     * @param helper
-     *            tache.
+     * Ctor init.
+     *
+     * @param model model.
      */
-    public CryptoTask(MainWindowModel model) {
-	super();
-	this.model = model;
+    public CryptoTask(MainWindowModel model)
+    {
+        super();
+        this.model = model;
     }
 
     /*
@@ -48,37 +45,45 @@ public class CryptoTask extends Task<Object> {
      * @see org.apache.pivot.util.concurrent.Task#execute()
      */
     @Override
-    public Object execute() throws TaskExecutionException {
+    public Object execute() throws TaskExecutionException
+    {
 
-	if (model != null) {
+        if (model != null)
+        {
 
-	    // Liste contenant les résultats des threads.
-	    List<Future<Path>> retours = new ArrayList<>();
+            // Liste contenant les résultats des threads.
+            List<Future<Path>> retours = new ArrayList<>();
 
-	    FileVisitor<Path> jcfv = new JCryptFileVisitor(retours, model);
+            FileVisitor<Path> jcfv = new JCryptFileVisitor(retours, model);
 
-	    for (final File f : model.getFileListLocal()) {
+            for (final File f : model.getFileListLocal())
+            {
 
-		try {
-		    Files.walkFileTree(f.toPath(), jcfv);
-		} catch (IOException e) {
-		    throw new TaskExecutionException(e);
-		}
+                try
+                {
+                    Files.walkFileTree(f.toPath(), jcfv);
+                } catch (IOException e)
+                {
+                    throw new TaskExecutionException(e);
+                }
 
-	    }
+            }
 
-	    for (Future<Path> retour : retours) {
-		// Parcours des résulats des threads.
-		try {
-		    // Méthode bloquante tant que le thread n'a pas terminé..
-		    retour.get();
-		} catch (ExecutionException | InterruptedException e) {
-		    // En cas de problème dans le thread on remonte une
-		    // exception au niveau de la tâche pivot.
-		    throw new TaskExecutionException(e);
-		}
-	    }
-	}
-	return null;
+            for (Future<Path> retour : retours)
+            {
+                // Parcours des résulats des threads.
+                try
+                {
+                    // Méthode bloquante tant que le thread n'a pas terminé..
+                    retour.get();
+                } catch (ExecutionException | InterruptedException e)
+                {
+                    // En cas de problème dans le thread on remonte une
+                    // exception au niveau de la tâche pivot.
+                    throw new TaskExecutionException(e);
+                }
+            }
+        }
+        return null;
     }
 }
