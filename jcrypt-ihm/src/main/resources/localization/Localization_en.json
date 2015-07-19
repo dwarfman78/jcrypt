@@ -17,7 +17,7 @@
   infoTitle: "Information",
   closeButton: "Close",
   infos: "Contact the author : dwarf@dwarfman.fr\n\nJCrypt uses the Blowfish algorithm pour for encryption\nand Gzip for compression.\n\nV1.1 (07/2015).",
-  help: "JCrypt is a program wich allows you to encrypt/decrypt files\nwith a password.\n\nOptions :",
+  help: "JCrypt is a program which allows you to encrypt/decrypt files\nwith a password.\n\nOptions :",
   destination: "Output",
   key: "Enter encryption key"
 }
