@@ -31,7 +31,7 @@ usage: jcrypt-cli
 
 for example :
 
-/usr/bin/java -jar /root/bin/jcrypt/jcrypt-cli.jar --input ${dumpfolder} --output ${dumpfolder}/encrypted --operation C --key myComplePassword --compress --verbose >> /var/log/jcrypt/dumpscripts.log
+/usr/bin/java -jar /root/bin/jcrypt/jcrypt-cli.jar --input ${dumpfolder} --output ${dumpfolder}/encrypted --operation C --key myComplexPassword --compress --verbose >> /var/log/jcrypt/dumpscripts.log
 
 Building
 ======
@@ -45,4 +45,6 @@ mvn clean install
 When build is successful, resulting jars should be put in their respective target folders.
 
 Note that both cli and gui jars need the base library (jcrypt-metier.jar) to work. Please make sure that this jar is added to the classpath.
+
+Not that an .exe wrapper is available for Microsoft Windows here : https://github.com/dwarfman78/jcrypt/releases
 
