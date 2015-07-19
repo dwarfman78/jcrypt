@@ -1,7 +1,7 @@
 JCrypt
 ======
 
-JCrypt is an application that let you encrypt/decrypt (cipher/decipher) files with a password through two ways :
+JCrypt is an application that lets you encrypt/decrypt (cipher/decipher) files with a password through two ways :
 
 - From a Graphic User Interface (GUI)
 - From a Command-Line Interface (CLI)
