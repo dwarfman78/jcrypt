@@ -2,7 +2,7 @@
     xmlns:jcrypt="fr.dwarf.jcrypt.controllers"
     xmlns:content="org.apache.pivot.wtk.content"
     xmlns="org.apache.pivot.wtk">
-    	<Border title="Destination">
+	<Border title="%destination">
 	    	<BoxPane orientation="horizontal" styles="{padding:2}">
 		    	<TextInput bxml:id="outputDirectory" textSize="10" editable="false"/>
 		    	<PushButton bxml:id="pushButton" buttonData="..."/>

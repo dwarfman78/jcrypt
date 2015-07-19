@@ -1,6 +1,0 @@
-Contacter l'auteur : dwarf@dwarfman.fr
-
-JCrypt utilise l'algorithme Blowfish pour les opérations 
-de cryptologie et Gzip pour la compression.
-
-V1.0 (01/2014).

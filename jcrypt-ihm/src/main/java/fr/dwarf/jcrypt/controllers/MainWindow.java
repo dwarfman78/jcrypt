@@ -8,6 +8,7 @@ import org.apache.pivot.beans.BXMLSerializer;
 import org.apache.pivot.beans.Bindable;
 import org.apache.pivot.collections.Map;
 import org.apache.pivot.io.FileList;
+import org.apache.pivot.serialization.SerializationException;
 import org.apache.pivot.util.Resources;
 import org.apache.pivot.util.concurrent.Task;
 import org.apache.pivot.util.concurrent.TaskListener;
@@ -23,6 +24,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.nio.file.Paths;
 import java.util.HashMap;
+import java.util.Locale;
+import java.util.MissingResourceException;
 
 /**
  * Controller de la fenêtre principale de l'application.
@@ -157,7 +160,20 @@ public class MainWindow extends Window implements Application, Bindable
 
         // Parsing vue principale.
         BXMLSerializer bxmlSerializer = new BXMLSerializer();
-        window = (Window) bxmlSerializer.readObject(MainWindow.class, MAIN_VIEW);
+        //window = (Window) bxmlSerializer.readObject(MainWindow.class, MAIN_VIEW);
+
+        Resources resources = null;
+
+        try
+        {
+            resources = new Resources("localization/Localization", Locale.getDefault());
+        } catch (IOException | SerializationException | MissingResourceException exception)
+        {
+            resources = new Resources("localization/Localization", Locale.ENGLISH);
+        }
+
+        window = (Window) bxmlSerializer.readObject(MainWindow.class.getResource("/views/MainWindow.bxml"), resources);
+
         // Ouverture de la fenêtre.
         window.open(display);
 

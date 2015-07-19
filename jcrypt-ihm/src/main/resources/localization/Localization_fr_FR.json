@@ -1,0 +1,23 @@
+{
+  titleBorder: "Fichiers",
+  tooltipDropTarget: "Glisser-déposer ici vos fichiers à chiffrer/déchiffrer",
+  dropText: "Déposer vos fichiers ici",
+  tooltipCrypt: "Chiffrer",
+  tooltipDecrypt: "Déchiffrer",
+  tooltipSameDir: "Répertoires source et destination identiques",
+  tooltipCompress: "Compresser les fichiers chiffrés",
+  tooltipDeleteOriginals: "Supprimer les fichiers originaux non chiffrés",
+  tooltipHelp: "Aide",
+  describeCrypt: "Engage l'opération de chiffrement.",
+  describeDecrypt: "Engage l'opération de déchiffrement.",
+  describeDeleteOriginals: "Supprime les fichiers originaux déposés pour chiffrage.",
+  describeCompress: "Compresse les fichiers chiffrés finaux.",
+  describeSameDir: "Définit le répertoire de destination égal au répertoire source.",
+  helpTitle: "Aide",
+  infoTitle: "Informations",
+  closeButton: "Fermer",
+  infos: "Contacter l'auteur : dwarf@dwarfman.fr\n\nJCrypt utilise l'algorithme Blowfish pour les opérations\nde cryptologie et Gzip pour la compression.\n\nV1.1 (07/2015).",
+  help: "JCrypt est une application permettant de chiffrer/déchiffrer\ndes fichiers et dossiers par glisser-déposer via une clé basée\nsur un mot de passe.\n\nOptions :",
+  desintation: "Destination",
+  key: "Saisissez la clé de chiffrement"
+}

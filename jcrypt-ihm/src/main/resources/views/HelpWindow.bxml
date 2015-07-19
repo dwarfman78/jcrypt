@@ -5,32 +5,32 @@
     maximized="true">
     <FillPane>
     	<BoxPane orientation="vertical">
-    		<Separator heading="Aide" />
+			<Separator heading="%helpTitle"/>
     		<BoxPane orientation="vertical">
-    			<TextArea text="@aide.txt" editable="false" enabled="false" width="400"/>
+				<TextArea text="%help" editable="false" enabled="false" width="400"/>
     			<BoxPane orientation="horizontal">
     					<ImageView image="@img/locked.png"/>
-    					<Label text="Engage l'opération de cryptage."/>
+					<Label text="%describeCrypt"/>
     			</BoxPane>
     			<BoxPane orientation="horizontal">
     					<ImageView image="@img/unlocked.png"/>
-    					<Label text="Engage l'opération de décryptage."/>
+					<Label text="%describeDecrypt"/>
     			</BoxPane>
     			<BoxPane orientation="horizontal">
     					<ImageView image="@img/scissors.png"/>
-    					<Label text="Supprime les fichiers originaux déposés pour cryptage."/>
+					<Label text="%describeDeleteOriginals"/>
     			</BoxPane>
     			<BoxPane orientation="horizontal">
     					<ImageView image="@img/file-zip.png"/>
-    					<Label text="Compresse les fichiers cryptés finaux."/>
+					<Label text="%describeCompress"/>
     			</BoxPane>
     			<BoxPane orientation="horizontal">
     					<ImageView image="@img/folder-open.png"/>
-    					<Label text="Définit le répertoire de destination égal au répertoire source."/>
+					<Label text="%describeSameDir"/>
     			</BoxPane>
     		</BoxPane>
-    		<Separator heading="Informations"/>
-    		<TextArea text="@infos.txt" editable="false" enabled="false"/>
+			<Separator heading="%infoTitle"/>
+			<TextArea text="%infos" editable="false" enabled="false"/>
     		<TablePane>
 		        <columns>
 		       		<TablePane.Column width="327"/>
@@ -38,7 +38,7 @@
         		</columns>
         		<TablePane.Row>
         			<TablePane.Filler/>
-        			<PushButton bxml:id="close" buttonData="Fermer"/>
+					<PushButton bxml:id="close" buttonData="%closeButton"/>
         		</TablePane.Row>
         	</TablePane>
     	</BoxPane>

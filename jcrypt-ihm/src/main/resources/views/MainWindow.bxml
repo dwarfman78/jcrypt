@@ -11,15 +11,15 @@
     </bxml:define>
     <FillPane>
 	    <BoxPane orientation="vertical" styles="{fill:true,padding:3}">
-	    	<Border title="Fichiers" styles="{padding:2}">
-	    		<TablePane bxml:id="dropTarget" tooltipText="Glisser-déposer ici vos fichiers à crypter/décrypter">
+			<Border title="%titleBorder" styles="{padding:2}">
+				<TablePane bxml:id="dropTarget" tooltipText="%tooltipDropTarget">
 	    		 	<columns>
 	    		 		<TablePane.Column width="1*"/>
 	    		 	</columns>
 	    			<TablePane.Row height="320">
 	    				<BoxPane orientation="vertical" styles="{verticalAlignment:'center',horizontalAlignment:'center'}">
 	    					<ImageView image="@img/downarrow.png"/>
-	    					<Label text="Déposer vos fichiers ici"/>
+							<Label text="%dropText"/>
 	    				</BoxPane>
 	    			</TablePane.Row>
 	    		</TablePane>
@@ -32,26 +32,31 @@
         			</columns>
         			<TablePane.Row height="-1">
         				<BoxPane orientation="horizontal">
-					    	<PushButton bxml:id="buttonCypher" toggleButton="true" buttonGroup="$groupe" selected="true" tooltipText="Crypter"  styles="{toolbar:false}">
+							<PushButton bxml:id="buttonCypher" toggleButton="true" buttonGroup="$groupe" selected="true"
+										tooltipText="%tooltipCrypt" styles="{toolbar:false}">
 					            <content:ButtonData icon="@img/locked.png"/>
 					        </PushButton>
-					        <PushButton bxml:id="buttonDecypher" toggleButton="true" buttonGroup="$groupe" tooltipText="Décrypter" styles="{toolbar:true}">
+							<PushButton bxml:id="buttonDecypher" toggleButton="true" buttonGroup="$groupe"
+										tooltipText="%tooltipDecrypt" styles="{toolbar:true}">
 					            <content:ButtonData icon="@img/unlocked.png"/>
 					        </PushButton>
-					        <PushButton bxml:id="buttonOneFolder" toggleButton="true" tooltipText="Répertoires source et destination identiques" styles="{toolbar:false}">
+							<PushButton bxml:id="buttonOneFolder" toggleButton="true" tooltipText="%tooltipSameDir"
+										styles="{toolbar:false}">
 					        	<content:ButtonData icon="@img/folder-open.png"/>
 					        </PushButton>
-					        <PushButton bxml:id="buttonZip" toggleButton="true" tooltipText="Compresser les fichiers cryptés" styles="{toolbar:true}">
+							<PushButton bxml:id="buttonZip" toggleButton="true" tooltipText="%tooltipCompress"
+										styles="{toolbar:true}">
 			        			<content:ButtonData icon="@img/file-zip.png"/>
 			        		</PushButton>
-					        <PushButton bxml:id="buttonCut" toggleButton="true" tooltipText="Supprimer les fichiers originaux non cryptés" styles="{toolbar:true}">
+							<PushButton bxml:id="buttonCut" toggleButton="true" tooltipText="%tooltipDeleteOriginals"
+										styles="{toolbar:true}">
 			        			<content:ButtonData icon="@img/scissors.png"/>
 			        		</PushButton>
 		       			</BoxPane>
         				<BoxPane bxml:id="activitiesPane" orientation="horizontal">
 		        		</BoxPane>
 		        		<BoxPane bxml:id="helpPane" orientation="horizontal">
-		        			<PushButton bxml:id="buttonHelp" tooltipText="Aide">
+							<PushButton bxml:id="buttonHelp" tooltipText="%tooltipHelp">
 		        				<content:ButtonData icon="@img/info.png"/>
 		        			</PushButton>
 		        		</BoxPane>

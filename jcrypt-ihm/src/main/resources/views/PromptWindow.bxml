@@ -3,7 +3,7 @@
     xmlns:content="org.apache.pivot.wtk.content"
     xmlns="org.apache.pivot.wtk">
     <FillPane>
-		<Border title="Saisissez la clé de cryptage">
+        <Border title="%key">
 			<TextInput bxml:id="key" password="true" maximumLength="100"/>
 		</Border>
 	</FillPane>

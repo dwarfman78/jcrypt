@@ -1,0 +1,23 @@
+{
+  titleBorder: "Files",
+  tooltipDropTarget: "Drag and drop your files here",
+  dropText: "Drop your files here",
+  tooltipCrypt: "Encrypt",
+  tooltipDecrypt: "Decrypt",
+  tooltipSameDir: "Same input and output folder",
+  tooltipCompress: "Compress encrypted files",
+  tooltipDeleteOriginals: "Delete original files",
+  tooltipHelp: "Help",
+  describeCrypt: "Encrypt mode.",
+  describeDecrypt: "Decrypt mode.",
+  describeDeleteOriginals: "Delete original files.",
+  describeCompress: "Compress final (encrypted) files.",
+  describeSameDir: "Input and output folders are the same.",
+  helpTitle: "Help",
+  infoTitle: "Information",
+  closeButton: "Close",
+  infos: "Contact the author : dwarf@dwarfman.fr\n\nJCrypt uses the Blowfish algorithm pour for encryption\nand Gzip for compression.\n\nV1.1 (07/2015).",
+  help: "JCrypt is a program wich allows you to encrypt/decrypt files\nwith a password.\n\nOptions :",
+  destination: "Output",
+  key: "Enter encryption key"
+}
