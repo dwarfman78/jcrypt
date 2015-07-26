@@ -46,5 +46,5 @@ When build is successful, resulting jars should be put in their respective targe
 
 Note that both cli and gui jars need the base library (jcrypt-metier.jar) to work. Please make sure that this jar is added to the classpath.
 
-Note that an .exe wrapper is available for Microsoft Windows here : https://github.com/dwarfman78/jcrypt/releases
+Note that a .exe wrapper is available for Microsoft Windows here with or without the Java Runtime Environment : https://github.com/dwarfman78/jcrypt/releases
 
